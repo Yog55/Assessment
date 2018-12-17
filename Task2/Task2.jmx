@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="sMyName" elementType="Argument">
+            <stringProp name="Argument.name">sMyName</stringProp>
+            <stringProp name="Argument.value">testsale</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="pUsernamePrefix" elementType="Argument">
+            <stringProp name="Argument.name">pUsernamePrefix</stringProp>
+            <stringProp name="Argument.value">User</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">chromedriver.exe</stringProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.headless_enabled">false</boolProp>
+          <boolProp name="ChromeDriverConfig.insecurecerts_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Navigate to - http://www.way2automation.com/angularjs-protractor/webtables/" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Navigate" enabled="true">
+            <stringProp name="WebDriverSampler.script">import java.io.File;
+import org.apache.commons.io.FileUtils;
+import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+
+boolean go = true;
+String Url = &quot;http://www.way2automation.com/angularjs-protractor/webtables/&quot;;
+WDS.browser.get(Url);
+
+WDS.sampleResult.sampleEnd();
+</stringProp>
+            <stringProp name="WebDriverSampler.parameters"></stringProp>
+            <stringProp name="WebDriverSampler.language">java</stringProp>
+          </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">cFirstNames</stringProp>
+              <stringProp name="RegexExtractor.regex">&lt;!-- ngRepeat: column in columns --&gt;&lt;td ng-repeat=&quot;column in columns&quot; ng-hide=&quot;column.noList&quot; class=&quot;smart-table-data-cell&quot;&gt;(.+?)&lt;/td&gt;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">null</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Validate that you are on the User List Table" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="true">
+            <stringProp name="BeanShellAssertion.query">int matches = Integer.parseInt(vars.get(&quot;cFirstNames_matchNr&quot;));
+
+String sMyName = vars.get(&quot;sMyName&quot;);
+
+Failure = true;
+
+for (int i=1; i&lt;=matches; i++) {
+
+    if (vars.get(&quot;cFirstNames_&quot; + i).equals(sMyName)) {
+        Failure = false;
+    }
+}
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </LoopController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="delimiter">,</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="filename">..\..\Task2\User.csv</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="variableNames">pFirstname,pLastname,pPassword,pCustomer,pCustomerValue,pRole,pEmail,pCell</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end">100000</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">pCounter</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${JMeterThread.last_sample_ok}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Add Users - ${pFirstname}" enabled="true">
+              <boolProp name="TransactionController.includeTimers">false</boolProp>
+              <boolProp name="TransactionController.parent">true</boolProp>
+            </TransactionController>
+            <hashTree>
+              <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Add Users" enabled="true">
+                <stringProp name="WebDriverSampler.script">import java.io.File;
+import org.apache.commons.io.FileUtils;
+import openqa.selenium.OutputType.*;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.*;
+import java.util.Random;
+
+WDS.sampleResult.sampleStart();
+
+WDS.browser.findElement(By.xpath(&quot;//button[@type=&apos;add&apos; and contains(., &apos; Add User&apos;)]&quot;)).click();
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;FirstName&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;FirstName&apos;]&quot;)).sendKeys(new String[] { &quot;${pFirstname}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;LastName&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;LastName&apos;]&quot;)).sendKeys(new String[] { &quot;${pLastname}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;UserName&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;UserName&apos;]&quot;)).sendKeys(new String[] { &quot;${pUsernamePrefix}${__counter(FALSE)}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Password&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Password&apos;]&quot;)).sendKeys(new String[] { &quot;${pPassword}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//input[@type=&apos;radio&apos; and @value=&apos;${pCustomerValue}&apos;]&quot;)).click();
+
+var role = WDS.browser.findElement(By.xpath(&quot;//select[@name=&apos;RoleId&apos;]&quot;));
+role.click();
+var select = new org.openqa.selenium.support.ui.Select(role);
+select.selectByVisibleText(&quot;${pRole}&quot;);
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Email&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Email&apos;]&quot;)).sendKeys(new String[] { &quot;${pEmail}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Mobilephone&apos;]&quot;)).clear();
+WDS.browser.findElement(By.xpath(&quot;//input[@name=&apos;Mobilephone&apos;]&quot;)).sendKeys(new String[] { &quot;${pCell}&quot; } );
+
+WDS.browser.findElement(By.xpath(&quot;//button[@class=&apos;btn btn-success&apos; and contains(., &apos;Save&apos;)]&quot;)).click();
+
+
+WDS.sampleResult.sampleEnd();
+
+
+Thread.sleep(2000);</stringProp>
+                <stringProp name="WebDriverSampler.parameters"></stringProp>
+                <stringProp name="WebDriverSampler.language">java</stringProp>
+              </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+              <hashTree>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="1668688954">${pEmail}</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">2</intProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
