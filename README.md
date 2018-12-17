@@ -1,5 +1,5 @@
 # Assessment
-Assessment
+Tools Used for the Assessment: JMeter 4.0
 
 # Setup
 #1 - Ensure Java is installed on the test machine. The version used on the development machine was - java version "1.8.0_161".
@@ -28,8 +28,20 @@ Assessment > apache-jmeter-4.0 > bin > chromedriver.exe
 Assessment > apache-jmeter-4.0 > bin > jmeter.bat
 
 
-#Task 1
+# Task 1
 
 Once JMeter has been started, open Task1.jmx.
 Then select Run > Start
 On the left pane, select View Results Tree and expand Question1, Question2, Question3 and Question4 in order to see the results of each API call.
+
+
+
+# Task 2
+
+Once JMeter has been started, open Task2.jmx.
+Then select Run > Start
+On the left pane, select View Results Tree and expand the items, the items marked in green indicates that the step has passed.
+If an item is in red, it indicates that the step has failed.
+
+
+
