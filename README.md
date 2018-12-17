@@ -21,11 +21,17 @@ Tools Used for the Assessment: JMeter 4.0 with Selenium/Webdriver Support
 #9 The folder structure and naming conventions of the files in the Assessment folder should look like follows:
 
 Assessment > Task1 > Task1.jmx
+
 Assessment > Task2 > Task2.jmx
+
 Assessment > Task2 > User.csv
+
 Assessment > apache-jmeter-4.0 > lib > ext > jmeter-plugins-manager-1.3.jar
+
 Assessment > apache-jmeter-4.0 > bin > chromedriver.exe
+
 Assessment > apache-jmeter-4.0 > bin > jmeter.bat
+
 
 
 # Task 1
