@@ -42,6 +42,7 @@ Once JMeter has been started, open Task2.jmx.
 Then select Run > Start
 On the left pane, select View Results Tree and expand the items, the items marked in green indicates that the step has passed.
 If an item is in red, it indicates that the step has failed.
+
 ![task2_0](https://user-images.githubusercontent.com/16992657/50118634-ff976400-0258-11e9-89af-7c590bd47a0a.JPG)
 
 
