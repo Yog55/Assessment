@@ -45,4 +45,35 @@ If an item is in red, it indicates that the step has failed.
 
 ![task2_0](https://user-images.githubusercontent.com/16992657/50118634-ff976400-0258-11e9-89af-7c590bd47a0a.JPG)
 
+The test is automated using JMeter with the webdriver plugin. The first navigation step can be viewed by selecting Navigate from the left pane and the code can be viewed on the main pane.
+
+![task2_1](https://user-images.githubusercontent.com/16992657/50118753-6452be80-0259-11e9-9ae3-5461cf2117e6.JPG)
+
+This component also had a regular expression extractor that extracts all first names from the table.
+
+![task2_2](https://user-images.githubusercontent.com/16992657/50118754-64eb5500-0259-11e9-9f8c-eab0ef98ef54.JPG)
+
+It then validates if you are on the table by comparing all the first names in the table to your name.
+Your name can be set by select the Test Plan and setting the value for the parameter called "sMyName".
+The value of "sMyName" is then compared to all the values in the table. If the value does not appear in the table then the "Validate that you are on the User List Table" will appear red in the playback and if the value is found, it will be green.
+
+![task2_3](https://user-images.githubusercontent.com/16992657/50118757-6583eb80-0259-11e9-98ee-d06d76519ead.JPG)
+
+The code to add users to the table is stored in the Add Users component, in order to view the code, please select the component in the left pane.
+
+![task2_3](https://user-images.githubusercontent.com/16992657/50118757-6583eb80-0259-11e9-98ee-d06d76519ead.JPG)
+
+Values that are added to the table are fed in from a CSV file. The username is created dynamically in the code in order to ensure that it is unique, a prefix for the username is set in the variable in the test plan "pUsernamePrefix".
+
+![task2_5](https://user-images.githubusercontent.com/16992657/50118760-661c8200-0259-11e9-90d8-cdeb2a9cca49.JPG)
+
+![task2_4](https://user-images.githubusercontent.com/16992657/50118759-6583eb80-0259-11e9-977e-d6509d633535.JPG)
+
+There is also a response assertion on Add Users in order to ensure that the users that were created appear in the table.
+
+
+
+
+
+
 
