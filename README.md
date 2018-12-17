@@ -1,5 +1,5 @@
 # Assessment
-Tools Used for the Assessment: JMeter 4.0
+Tools Used for the Assessment: JMeter 4.0 with Selenium/Webdriver Support
 
 # Setup
 #1 - Ensure Java is installed on the test machine. The version used on the development machine was - java version "1.8.0_161".
