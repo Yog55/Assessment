@@ -34,6 +34,22 @@ Once JMeter has been started, open Task1.jmx.
 Then select Run > Start
 On the left pane, select View Results Tree and expand Question1, Question2, Question3 and Question4 in order to see the results of each API call.
 
+![task1_0](https://user-images.githubusercontent.com/16992657/50120021-f5776480-025c-11e9-99b0-24e9fd9147da.JPG)
+
+For the task to use code, in order to verify “retriever” breed is within the list.
+Code was written within a beanshell assertion in order to verify that the response contained the "retriever" breed.
+
+![task1_1](https://user-images.githubusercontent.com/16992657/50120022-f5776480-025c-11e9-8314-d9999dc5b786.JPG)
+
+The output of the API request to produce a list of sub-breeds for "retriever".
+
+![task1_2](https://user-images.githubusercontent.com/16992657/50120023-f5776480-025c-11e9-9a5e-efdcba5b9abb.JPG)
+
+The output of the API request to produce a random image / link for the sub-breed “golden”
+
+![task1_3](https://user-images.githubusercontent.com/16992657/50120019-f4dece00-025c-11e9-807e-d5ad0420c8c6.JPG)
+
+
 
 
 # Task 2
